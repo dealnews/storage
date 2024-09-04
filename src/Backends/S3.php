@@ -55,7 +55,7 @@ class S3 implements StorageInterface {
      *
      * @return     StorageInterface
      */
-    public static function init(array $options = [], ?int $memory_limit = null, S3Client $client = null, ?Client $guzzle = null): StorageInterface {
+    public static function init(array $options = [], ?int $memory_limit = null, ?S3Client $client = null, ?Client $guzzle = null): StorageInterface {
         if (isset($options['profile'])) {
             $config = GetConfig::init();
             $bucket = $config->get("s3.{$options['profile']}.bucket") ?? null;
@@ -88,7 +88,7 @@ class S3 implements StorageInterface {
      * @param      string  $key     The AWS key
      * @param      string  $secret  The AWS secret
      */
-    public function __construct(string $bucket, string $region, string $key, string $secret, ?int $memory_limit = null, S3Client $client = null, ?Client $guzzle = null) {
+    public function __construct(string $bucket, string $region, string $key, string $secret, ?int $memory_limit = null, ?S3Client $client = null, ?Client $guzzle = null) {
         $this->bucket = $bucket;
 
         // Get these credentials from somewhere else in production
