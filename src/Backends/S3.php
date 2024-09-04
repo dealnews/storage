@@ -253,7 +253,6 @@ class S3 implements StorageInterface {
      * @return     StorageObject
      */
     protected function realGet(string $url_path, bool $get_data, ?string $filename = null): StorageObject {
-        $object = null;
 
         $url_path = $this->parseUrl($url_path);
 
