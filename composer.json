@@ -14,7 +14,7 @@
     "require": {
         "php": "^8.0",
         "aws/aws-sdk-php": "^3.321",
-        "dealnews/get-config": "^2.0",
+        "dealnews/get-config": "^2.1.0",
         "dealnews/test-helpers": "^0.9.0",
         "guzzlehttp/guzzle": "^7.9"
     },
