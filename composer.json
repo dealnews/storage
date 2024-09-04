@@ -1,0 +1,46 @@
+{
+    "name": "dealnews/storage",
+    "type": "library",
+    "description": "Object Storage",
+    "config": {
+        "optimize-autoloader": true,
+        "discard-changes": true,
+        "sort-packages": true
+    },
+    "require-dev": {
+        "php-parallel-lint/php-parallel-lint": "^1.2",
+        "phpunit/phpunit": "^9.6"
+    },
+    "require": {
+        "php": "^8.0",
+        "aws/aws-sdk-php": "^3.321",
+        "dealnews/get-config": "^2.0",
+        "dealnews/test-helpers": "^0.9.0",
+        "guzzlehttp/guzzle": "^7.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "DealNews\\ObjectStorage\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "DealNews\\ObjectStorage\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "phan": [
+            "docker run --rm -e PHAN_DISABLE_XDEBUG_WARN=1 -v `pwd`:/mnt/src -w /mnt/src phanphp/phan:5 -p"
+        ],
+        "test": [
+            "@lint",
+            "phpunit --colors=never"
+        ],
+        "lint": [
+            "parallel-lint src/ tests/"
+        ],
+        "fix": [
+            "php-cs-fixer fix --config .php-cs-fixer.dist.php src tests"
+        ]
+    }
+}
