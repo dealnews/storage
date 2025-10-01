@@ -38,7 +38,7 @@ class MockBackend implements StorageInterface {
         return $keys;
     }
 
-    public function put(string $url_path, string $object_data, string $content_type, array $meta_data = [], string $acl = null): ?StorageObject {
+    public function put(string $url_path, string $object_data, string $content_type, array $meta_data = [], ?string $acl = null): ?StorageObject {
         if ($url_path === '/bad/data') {
             return null;
         }
