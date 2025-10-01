@@ -1,6 +1,6 @@
 # Object Storage Library
 
-This library provides and interface to store and retrieve objects from
+This library provides an interface to store and retrieve objects from
 services such as S3.
 
 ```php
@@ -8,7 +8,7 @@ use DealNews\ObjectStorage\Storage;
 use DealNews\ObjectStorage\Backends\S3;
 
 // the options array for S3 can contain a profile name which will use
-// GetConfig to find the other values in dealnews.ini or it can contain
+// GetConfig to find the other values in config.ini or it can contain
 // bucket, region, key, and secret.
 $storage = new Storage(S3::init(['profile' => 'get_config_name']));
 
