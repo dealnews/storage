@@ -2,8 +2,8 @@
 
 namespace DealNews\ObjectStorage;
 
-use DealNews\ObjectStorage\Data\StorageObject;
 use DealNews\ObjectStorage\Backends\StorageInterface;
+use DealNews\ObjectStorage\Data\StorageObject;
 
 /**
  * Class which moves files to and from long term storage

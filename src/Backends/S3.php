@@ -3,8 +3,8 @@
 namespace DealNews\ObjectStorage\Backends;
 
 use Aws\S3\S3Client;
-use DealNews\ObjectStorage\Data\StorageObject;
 use DealNews\GetConfig\GetConfig;
+use DealNews\ObjectStorage\Data\StorageObject;
 use GuzzleHttp\Client;
 
 /**
@@ -60,13 +60,13 @@ class S3 implements StorageInterface {
             $config = GetConfig::init();
             $bucket = $config->get("s3.{$options['profile']}.bucket") ?? null;
             $region = $config->get("s3.{$options['profile']}.region") ?? null;
-            $key    = $config->get("s3.{$options['profile']}.key") ?? null;
+            $key    = $config->get("s3.{$options['profile']}.key")    ?? null;
             $secret = $config->get("s3.{$options['profile']}.secret") ?? null;
         }
 
         $bucket ??= $options['bucket'] ?? null;
         $region ??= $options['region'] ?? null;
-        $key    ??= $options['key'] ?? null;
+        $key    ??= $options['key']    ?? null;
         $secret ??= $options['secret'] ?? null;
 
         return new self(
@@ -105,7 +105,7 @@ class S3 implements StorageInterface {
 
         $memory_limit ??= strtoupper(ini_get('memory_limit'));
 
-        if (preg_match('/^(\d+)([KMG])$/', $memory_limit, $match)) {
+        if (preg_match('/^(\\d+)([KMG])$/', $memory_limit, $match)) {
             switch ($match[2]) {
                 case 'K':
                     $memory_limit = $match[1] * 1024;
