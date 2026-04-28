@@ -15,7 +15,7 @@
     },
     "require": {
         "php": "^8.2",
-        "aws/aws-sdk-php": "^3.378",
+        "aws/aws-sdk-php": "^3.379",
         "dealnews/get-config": "^2.2.0",
         "guzzlehttp/guzzle": "^7.10",
         "mtdowling/jmespath.php": "^2.8"
