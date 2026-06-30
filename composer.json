@@ -15,10 +15,10 @@
     },
     "require": {
         "php": "^8.2",
-        "aws/aws-sdk-php": "^3.384",
+        "aws/aws-sdk-php": "^3.385",
         "dealnews/get-config": "^2.2.0",
         "guzzlehttp/guzzle": "^7.12",
-        "mtdowling/jmespath.php": "^2.8"
+        "mtdowling/jmespath.php": "^2.9"
     },
     "autoload": {
         "psr-4": {
