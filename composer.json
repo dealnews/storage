@@ -17,7 +17,7 @@
         "php": "^8.2",
         "aws/aws-sdk-php": "^3.386",
         "dealnews/get-config": "^2.2.0",
-        "guzzlehttp/guzzle": "^7.12",
+        "guzzlehttp/guzzle": "^7.14",
         "mtdowling/jmespath.php": "^2.9"
     },
     "autoload": {
